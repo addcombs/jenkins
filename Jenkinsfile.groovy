@@ -1,17 +1,22 @@
 pipeline {
     agent any
 
+    environment {
+        GIT_URL = ""
+    }
+
     stages {
         stage('Setup'){
             steps {
                 script {
-                    println("Git URL")
+                    println("Git URL");
                 }
             }
         }
         stage('Checkout') {
             steps {
-              git credentialsId: "${github_creds}", url: "${github_repo}"
+                sh 'echo github_repo'
+                git credentialsId: "${github_creds}", url: "${github_repo}"
             }
         }
         stage('Build') {
