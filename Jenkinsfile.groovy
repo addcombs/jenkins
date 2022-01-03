@@ -5,7 +5,7 @@ pipeline {
         stage('Setup'){
             steps {
                 script {
-                    println("Git URL: ${github_repo}")
+                    println("Git URL")
                 }
             }
         }
