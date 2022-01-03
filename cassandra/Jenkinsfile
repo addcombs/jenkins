@@ -6,9 +6,7 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-              script{
-                docker network create cass-network
-              }
+              sh 'docker network create cass-network'
             }
         }
     }
