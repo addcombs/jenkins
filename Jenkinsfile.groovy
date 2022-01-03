@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+        stage('Setup'){
+            steps {
+                script {
+                    println("Git URL: ${github_repo}")
+                }
+            }
+        }
         stage('Checkout') {
             steps {
               git credentialsId: "${github_creds}", url: "${github_repo}"
