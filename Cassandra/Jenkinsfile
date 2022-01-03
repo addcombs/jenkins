@@ -2,26 +2,13 @@ pipeline {
     agent any
 
     environment {
-        GIT_URL = ""
+        emailRecipient = 'acombs@outlook.com'
     }
 
     stages {
-        stage('Setup'){
-            steps {
-                script {
-                    println("Git URL");
-                }
-            }
-        }
-        stage('Checkout') {
-            steps {
-                sh 'echo github_repo'
-                git credentialsId: "${github_creds}", url: "${github_repo}"
-            }
-        }
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                sh ''
             }
         }
     }

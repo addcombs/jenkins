@@ -6,7 +6,7 @@ description: Simple Pipeline Template
 parameters:
   - name: emailRecipient
     type: string
-    displayName: Email addres to be used for sending build notifications
+    displayName: Email address to be used for sending build notifications
   - name: github_repo
     type: string
     displayName: GitHub HTTPS repo endpoint
